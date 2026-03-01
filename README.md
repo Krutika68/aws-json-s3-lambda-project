@@ -88,14 +88,15 @@ python upload_to_s3.py
 
 --Sample Lambda Event Input:
 
- ```{
+ ```
+{
   "filter_department": "Engineering",
   "filter_active": true
 }
  ```
  
 ---
-Conclusion
+## Conclusion
 
 This project demonstrates a serverless JSON ingestion workflow:
 1. Data is generated with Python.
@@ -104,6 +105,7 @@ This project demonstrates a serverless JSON ingestion workflow:
 
 It provides a scalable, cost-efficient, and secure approach for processing structured and semi-structured data, suitable for small to medium-sized datasets and easily extendable for production workloads.
 ---
+
 
 
 
