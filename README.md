@@ -106,12 +106,14 @@ python upload_to_s3.py
 ## Conclusion
 
 This project demonstrates a serverless JSON ingestion workflow:
-1. Data is generated with Python.
-2. Stored in Amazon S3.
-3. Dynamically queried via AWS Lambda.
+
+1. Data is generated with Python.  
+2. Stored in Amazon S3.  
+3. Dynamically queried via AWS Lambda.  
 
 It provides a scalable, cost-efficient, and secure approach for processing structured and semi-structured data, suitable for small to medium-sized datasets and easily extendable for production workloads.
 ---
+
 
 
 
