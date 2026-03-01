@@ -43,16 +43,21 @@ The dataset contains employee information with ~10 fields per record, including 
 
 ---
 ```
-## Architecture Flow
+## Architecture
 
-Python Script (`upload_to_s3.py`)
-           ↓
-Amazon S3 Bucket (`employees.json` stored)
-           ↓
-AWS Lambda Function (reads and processes JSON)
-           ↓
-Dynamic JSON Query Result (filtered output)
- ```
+```text
+Python Script (generate_json.py / upload_to_s3.py)
+           │
+           ▼
+   [ Amazon S3 Bucket ]
+   (employees.json stored)
+           │
+           ▼
+   [ AWS Lambda Function ]
+   (Reads & Filters JSON)
+           │
+           ▼
+   [ Filtered Output ]
 ---
  ```
 S3 Bucket Details:
@@ -101,6 +106,7 @@ This project demonstrates a serverless JSON ingestion workflow:
 
 It provides a scalable, cost-efficient, and secure approach for processing structured and semi-structured data, suitable for small to medium-sized datasets and easily extendable for production workloads.
 ---
+
 
 
 
