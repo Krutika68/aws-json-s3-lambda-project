@@ -40,7 +40,8 @@ The dataset contains employee information with ~10 fields per record, including 
   "manager": "Bob",
   "projects": [{"name": "ProjectX", "status": "Ongoing"}]
 }
-
+```
+---
 
 ```
 ## Architecture
@@ -60,6 +61,8 @@ Python Script (generate_json.py / upload_to_s3.py)
    [ Dynamic JSON Query Result  ]
 
  ```
+---
+
 ## S3 Bucket Details
 
 | Property       | Value                        |
@@ -72,8 +75,7 @@ Python Script (generate_json.py / upload_to_s3.py)
 
 ---
  
-
- ## How to Run
+## How to Run
  
 1. **Install dependencies:**
 ```bash
@@ -102,7 +104,8 @@ python upload_to_s3.py
 }
  ```
  
----
+ ---
+
 ## Conclusion
 
 This project demonstrates a serverless JSON ingestion workflow:
@@ -113,6 +116,7 @@ This project demonstrates a serverless JSON ingestion workflow:
 
 It provides a scalable, cost-efficient, and secure approach for processing structured and semi-structured data, suitable for small to medium-sized datasets and easily extendable for production workloads.
 ---
+
 
 
 
