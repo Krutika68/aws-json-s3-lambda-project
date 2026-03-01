@@ -66,26 +66,40 @@ Public Access: Blocked
  ```
 ---
  ```
-## How to Run
+How to Run
 
-1. **Install dependencies:**
-```bash
+1. Install dependencies:
+
 pip install -r requirements.txt
 
-2. **Generate sample JSON data:**
-```bash
+2. Generate sample JSON data:
+
 python generate_json.py
 
-3. **Upload JSON to S3:**
-```bash
+3. Upload JSON to S3:
+
 python upload_to_s3.py
 
-4. Test Lambda Function
-Configure the Lambda function in the AWS console using the code in lambda_function.py.
-Provide an input event (JSON) and check the filtered output.
- ```
----
-Conclusion:
+4. Test Lambda Function:
 
-This project demonstrates a serverless architecture where JSON data is generated using Python, stored in Amazon S3, and dynamically queried using AWS Lambda. The solution ensures scalable and efficient data processing while preserving structured and semi-structured data including nested JSON objects and arrays.
+Configure the Lambda function in the AWS console using lambda_function.py.
+Provide an input event (JSON) with filters and check the filtered output.
+
+--Sample Lambda Event Input:
+
+{
+  "filter_department": "Engineering",
+  "filter_active": true
+}
+ 
 ---
+Conclusion
+
+This project demonstrates a serverless JSON ingestion workflow:
+1. Data is generated with Python.
+2. Stored in Amazon S3.
+3. Dynamically queried via AWS Lambda.
+
+It provides a scalable, cost-efficient, and secure approach for processing structured and semi-structured data, suitable for small to medium-sized datasets and easily extendable for production workloads.
+---
+
