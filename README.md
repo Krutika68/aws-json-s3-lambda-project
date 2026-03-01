@@ -1,67 +1,74 @@
 # AWS JSON Ingestion Project
 
 ## Project Overview
-This project demonstrates a serverless workflow for ingesting, storing, and querying JSON data using AWS services. Sample employee JSON data is generated with Python, uploaded to an Amazon S3 bucket, and dynamically filtered using an AWS Lambda function.
+This project demonstrates a **serverless workflow** for ingesting, storing, and querying JSON data using AWS services. Sample employee JSON data is generated with Python, uploaded to an Amazon S3 bucket, and dynamically filtered using an AWS Lambda function.
+
+---
 
 ## AWS Services Used
-- **Amazon S3** – Stores JSON files.
-- **AWS Lambda** – Queries JSON files dynamically using Python.
-- **IAM** – Grants Lambda permissions to access S3.
+- **Amazon S3** – Stores JSON files.  
+- **AWS Lambda** – Queries JSON files dynamically using Python.  
+- **IAM** – Configures permissions for Lambda to access S3.  
 
-## Project Structure
-
-# AWS JSON Ingestion Project
-
-## Project Overview
-This project demonstrates a serverless workflow for ingesting, storing, and querying JSON data using AWS services. Sample employee JSON data is generated with Python, uploaded to an Amazon S3 bucket, and dynamically filtered using an AWS Lambda function.
-
-## AWS Services Used
-- **Amazon S3** – Stores JSON files.
-- **AWS Lambda** – Queries JSON files dynamically using Python.
-- **IAM** – Grants Lambda permissions to access S3.
-
-## Project Structure
-```
-
-aws-json-ingestion/
-├── generate_json.py # Generates sample employee JSON data
-├── upload_to_s3.py # Uploads JSON data to S3
-├── lambda_function.py # Lambda function to filter JSON data
-├── requirements.txt # Python dependencies
-├── README.md # Project description
-└── screenshots/ # Screenshots of execution and results
-```
+---
 
 ## Sample Data Structure
-The employee dataset contains ~10 fields per record, including nested JSON values:
+The dataset contains employee information with ~10 fields per record, including nested JSON:
 
-- `employee_id`
-- `name`
-- `department`
-- `salary`
-- `address` (nested JSON)
-- `skills`
-- `active`
-- `joining_date`
-- `manager`
-- `projects` (nested JSON)
+- `employee_id`  
+- `name`  
+- `department`  
+- `salary`  
+- `address` (nested JSON)  
+- `skills`  
+- `active`  
+- `joining_date`  
+- `manager`  
+- `projects` (nested JSON)  
 
-## How it Works
-1. `generate_json.py` creates sample JSON data.
-2. `upload_to_s3.py` uploads the JSON file to S3.
-3. `lambda_function.py` queries the JSON data dynamically based on input parameters (e.g., department).
-4. Filtered results are returned as JSON.
-
-## Example Lambda Input Event
+**Example JSON Record:**
 ```json
 {
-  "department": "Engineering"
+  "employee_id": 1,
+  "name": "Alice",
+  "department": "Engineering",
+  "salary": 80000,
+  "address": {"city": "Mumbai", "state": "MH"},
+  "skills": ["Python", "AWS", "SQL"],
+  "active": true,
+  "joining_date": "2025-01-15",
+  "manager": "Bob",
+  "projects": [{"name": "ProjectX", "status": "Ongoing"}]
 }
 
+
+```
+Architecture Flow
+Python Script (upload_to_s3.py)
+           ↓
+   Amazon S3 Bucket
+(employees.json stored)
+           ↓
+  AWS Lambda Function
+(reads and processes JSON)
+           ↓
+ Dynamic JSON Query Result
+ ```
+
+ ```
+S3 Bucket Details:
+
+Bucket Name: project-json-bucket-mumbai
+Region: ap-south-1 (Mumbai)
+Bucket Type: General Purpose
+Versioning: Disabled
+Public Access: Blocked
+ ```
+---
+ ```
 ## How to Run
 
 1. **Install dependencies:**
-
 ```bash
 pip install -r requirements.txt
 
@@ -72,3 +79,13 @@ python generate_json.py
 3. **Upload JSON to S3:**
 ```bash
 python upload_to_s3.py
+
+4. Test Lambda Function
+Configure the Lambda function in the AWS console using the code in lambda_function.py.
+Provide an input event (JSON) and check the filtered output.
+ ```
+---
+Conclusion:
+
+This project demonstrates a serverless architecture where JSON data is generated using Python, stored in Amazon S3, and dynamically queried using AWS Lambda. The solution ensures scalable and efficient data processing while preserving structured and semi-structured data including nested JSON objects and arrays.
+---
