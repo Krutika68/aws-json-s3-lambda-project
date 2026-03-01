@@ -57,8 +57,8 @@ Python Script (generate_json.py / upload_to_s3.py)
    (Reads & Filters JSON)
            │
            ▼
-   [ Filtered Output ]
----
+   [ Dynamic JSON Query Result  ]
+
  ```
 S3 Bucket Details:
 
@@ -106,6 +106,7 @@ This project demonstrates a serverless JSON ingestion workflow:
 
 It provides a scalable, cost-efficient, and secure approach for processing structured and semi-structured data, suitable for small to medium-sized datasets and easily extendable for production workloads.
 ---
+
 
 
 
