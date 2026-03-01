@@ -68,33 +68,31 @@ Python Script (generate_json.py / upload_to_s3.py)
 - **Versioning** - Disabled
 - **Public Access** - Blocked
  ```
----
+
  ```
-How to Run
+## How to Run
 
 1. Install dependencies:
-
 pip install -r requirements.txt
 
 2. Generate sample JSON data:
-
 python generate_json.py
 
 3. Upload JSON to S3:
-
 python upload_to_s3.py
 
 4. Test Lambda Function:
 
-Configure the Lambda function in the AWS console using lambda_function.py.
-Provide an input event (JSON) with filters and check the filtered output.
+- Configure the Lambda function in the AWS console using lambda_function.py.
+ Provide an input event (JSON) with filters and check the filtered output.
 
 --Sample Lambda Event Input:
 
-{
+ ```{
   "filter_department": "Engineering",
   "filter_active": true
 }
+ ```
  
 ---
 Conclusion
@@ -106,6 +104,7 @@ This project demonstrates a serverless JSON ingestion workflow:
 
 It provides a scalable, cost-efficient, and secure approach for processing structured and semi-structured data, suitable for small to medium-sized datasets and easily extendable for production workloads.
 ---
+
 
 
 
