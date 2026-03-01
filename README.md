@@ -41,7 +41,7 @@ The dataset contains employee information with ~10 fields per record, including 
   "projects": [{"name": "ProjectX", "status": "Ongoing"}]
 }
 
-
+---
 ```
 ## Architecture Flow
 
@@ -53,7 +53,7 @@ AWS Lambda Function (reads and processes JSON)
            ↓
 Dynamic JSON Query Result (filtered output)
  ```
-
+---
  ```
 S3 Bucket Details:
 
@@ -101,5 +101,6 @@ This project demonstrates a serverless JSON ingestion workflow:
 
 It provides a scalable, cost-efficient, and secure approach for processing structured and semi-structured data, suitable for small to medium-sized datasets and easily extendable for production workloads.
 ---
+
 
 
